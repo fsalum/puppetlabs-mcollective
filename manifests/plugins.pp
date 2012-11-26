@@ -55,9 +55,21 @@ class mcollective::plugins(
     ensure      => present,
     type        => 'agent',
     ddl         => true,
-    application => false,
+    application => true,
   }
   mcollective::plugins::plugin { 'package':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => true,
+  }
+  mcollective::plugins::plugin { 'puppetd':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => true,
+  }
+  mcollective::plugins::plugin { 'puppetral':
     ensure      => present,
     type        => 'agent',
     ddl         => true,

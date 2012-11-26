@@ -1,8 +1,14 @@
 # MCollective Module
 
-Jeff McCune <jeff@puppetlabs.com>
+Author: Jeff McCune <jeff@puppetlabs.com>  
+Minor changes: Felipe Salum <fsalum@gmail.com>  
 
 This module manages MCollective from within Puppet.
+
+# Related Work #
+
+This is a fork from [puppetlabs-mcollective](https://github.com/puppetlabs/puppetlabs-mcollective)
+with some minor changes, check CHANGELOG.
 
 # Quick Start
 
@@ -18,6 +24,20 @@ Change the pre-shared key for both the client and the server:
     node default {
       class { 'mcollective':
         mc_security_psk => 'abc123',
+      }
+    }
+
+Main parameters to specify:
+
+    node default {
+      class { 'mcollective':
+        mc_security_psk => 'abc123',
+        stomp_server    => 'puppet.domain',
+        stomp_user      => 'marionette',
+        stomp_passwd    => 'mcollective',
+        manage_plugins  => true,
+        server          => true,
+        client          => true,
       }
     }
 
