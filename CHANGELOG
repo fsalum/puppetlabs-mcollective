@@ -1,3 +1,5 @@
+2013-02-08 Felipe Salum <fsalum@gmail.com> - 0.0.2
+* Enabling mcollective service on init.d
 2012-11-26 Felipe Salum <fsalum@gmail.com> - 0.0.1
 * Fork from puppetlabs-mcollective, latest version 0.2.0
 * Removed stomp pools features
