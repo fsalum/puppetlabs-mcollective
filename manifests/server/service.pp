@@ -32,11 +32,13 @@ class mcollective::server::service(
   }
 
   service { 'mcollective':
-    ensure    => running,
-    name      => $mc_service_name,
-    hasstatus => true,
-    start     => $mc_service_start_real,
-    stop      => $mc_service_stop_real,
+    ensure     => running,
+    name       => $mc_service_name,
+    enable     => true,
+    hasstatus  => true,
+    hasrestart => true,
+    start      => $mc_service_start_real,
+    stop       => $mc_service_stop_real,
   }
 
 }

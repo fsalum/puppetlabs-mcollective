@@ -1,5 +1,5 @@
 name    'fsalum-mcollective'
-version '0.0.1'
+version '0.0.2'
 source 'git://github.com/fsalum/puppetlabs-mcollective.git'
 author 'puppetlabs'
 license 'Apache License Version 2.0'
