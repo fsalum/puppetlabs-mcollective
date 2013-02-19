@@ -1,3 +1,6 @@
+2013-02-19 Felipe Salum <fsalum@gmail.com> - 0.0.3
+* Adding options for activemq connector
+* Ensuring latest libstomp-ruby version to fix issue http://projects.puppetlabs.com/issues/15119
 2013-02-08 Felipe Salum <fsalum@gmail.com> - 0.0.2
 * Enabling mcollective service on init.d
 2012-11-26 Felipe Salum <fsalum@gmail.com> - 0.0.1

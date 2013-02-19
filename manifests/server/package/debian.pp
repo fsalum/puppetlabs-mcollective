@@ -15,7 +15,7 @@ class mcollective::server::package::debian(
 ) {
 
   package { 'libstomp-ruby':
-    ensure => present,
+    ensure => latest,
   }
 
   package { 'mcollective':
