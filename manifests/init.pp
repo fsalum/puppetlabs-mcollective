@@ -26,13 +26,14 @@
 #  [*mc_security_psk*]    - The MCollective pre shared key
 #  [*main_collective]     - Sets the default collective
 #  [*collectives]         - Sets the collectives a server node belongs to
-#  [*connector]           - The stomp connector to use. Currently only stomp and
+#  [*connector]           - The stomp connector to use. Currently only rabbitmq and
 #                           activemq are recognized. Note activemq only supported
 #                           on version 1.3.2+
 #  [*stomp_server]        - Name or ip of stomp server
 #  [*stomp_port]          - Port on stomp server to connect to
 #  [*stomp_user]          - Username used to authenticate on stomp server
 #  [*stomp_passwd]        - Password used to authenticate on stomp server
+#  [*stomp_vhost]         - Virtual host for rabbitmq
 #  [*classesfile]         - Path to the classes file written by puppet
 #  [*fact_source]         - The type of fact source. Currently only facter and yaml
 #                           are recognized
@@ -66,6 +67,7 @@
 #     client_config       => template('mcollective/client.cfg.erb'),
 #     client_config_file  => '/home/mcollective/.mcollective',
 #     stomp_server        => 'rabbitmq',
+#     stomp_vhost         => '/mcollective',
 #   }
 # }
 #
