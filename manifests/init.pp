@@ -65,7 +65,7 @@
 #     client              => true,
 #     client_config       => template('mcollective/client.cfg.erb'),
 #     client_config_file  => '/home/mcollective/.mcollective',
-#     stomp_server        => 'stomp',
+#     stomp_server        => 'rabbitmq',
 #   }
 # }
 #
@@ -82,17 +82,19 @@ class mcollective(
   $client_config_file   = '/etc/mcollective/client.cfg',
   $main_collective      = 'mcollective',
   $collectives          = 'mcollective',
-  $connector            = 'stomp',
+  $connector            = 'rabbitmq',
   $classesfile          = '/var/lib/puppet/state/classes.txt',
   $stomp_server         = $mcollective::params::stomp_server,
   $stomp_port           = $mcollective::params::stomp_port,
   $stomp_user           = $mcollective::params::stomp_user,
   $stomp_passwd         = $mcollective::params::stomp_passwd,
+  $stomp_vhost          = $mcollective::params::stomp_vhost,
   $mc_security_provider = $mcollective::params::mc_security_provider,
   $mc_security_psk      = $mcollective::params::mc_security_psk,
   $fact_source          = 'facter',
   $yaml_facter_source   = '/etc/mcollective/facts.yaml',
   $plugin_params        = {}
+
 ) inherits mcollective::params
 {
   $v_bool = [ '^true$', '^false$' ]
@@ -107,7 +109,7 @@ class mcollective(
   validate_re($mc_security_provider, '^[a-zA-Z0-9_]+$')
   validate_re($mc_security_psk, '^[^ \t]+$')
   validate_re($fact_source, '^facter$|^yaml$')
-  validate_re($connector, '^rabbitmq$|^activemq$|')
+  validate_re($connector, '^activemq$|^rabbitmq$|')
   validate_hash($plugin_params)
 
   $server_real               = $server
