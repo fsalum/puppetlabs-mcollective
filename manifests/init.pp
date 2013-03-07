@@ -96,7 +96,6 @@ class mcollective(
   $fact_source          = 'facter',
   $yaml_facter_source   = '/etc/mcollective/facts.yaml',
   $plugin_params        = {}
-
 ) inherits mcollective::params
 {
   $v_bool = [ '^true$', '^false$' ]
