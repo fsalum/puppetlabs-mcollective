@@ -67,7 +67,7 @@ class mcollective::params {
   $stomp_vhost   = '/mcollective'
   $stomp_user    = 'mcollective'
   $stomp_passwd  = 'marionette'
-  $stomp_server  = 'rabbitmq'
+  $stomp_server  = 'stomp'
   $stomp_port    = '6163'
 
   $pkg_state = 'present'

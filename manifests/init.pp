@@ -26,8 +26,8 @@
 #  [*mc_security_psk*]    - The MCollective pre shared key
 #  [*main_collective]     - Sets the default collective
 #  [*collectives]         - Sets the collectives a server node belongs to
-#  [*connector]           - The stomp connector to use. Currently only rabbitmq and
-#                           activemq are recognized. Note activemq only supported
+#  [*connector]           - The stomp connector to use. Currently stomp, rabbitmq
+#                           and activemq are recognized. Note activemq only supported
 #                           on version 1.3.2+
 #  [*stomp_server]        - Name or ip of stomp server
 #  [*stomp_port]          - Port on stomp server to connect to
@@ -84,7 +84,7 @@ class mcollective(
   $client_config_file   = '/etc/mcollective/client.cfg',
   $main_collective      = 'mcollective',
   $collectives          = 'mcollective',
-  $connector            = 'rabbitmq',
+  $connector            = 'stomp',
   $classesfile          = '/var/lib/puppet/state/classes.txt',
   $stomp_server         = $mcollective::params::stomp_server,
   $stomp_port           = $mcollective::params::stomp_port,
@@ -110,7 +110,7 @@ class mcollective(
   validate_re($mc_security_provider, '^[a-zA-Z0-9_]+$')
   validate_re($mc_security_psk, '^[^ \t]+$')
   validate_re($fact_source, '^facter$|^yaml$')
-  validate_re($connector, '^activemq$|^rabbitmq$|')
+  validate_re($connector, '^activemq$|^rabbitmq$|^stomp$')
   validate_hash($plugin_params)
 
   $server_real               = $server
