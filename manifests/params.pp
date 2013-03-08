@@ -64,6 +64,7 @@ class mcollective::params {
   $server_config_owner  = '0'
   $server_config_group  = '0'
 
+  $stomp_vhost   = '/mcollective'
   $stomp_user    = 'mcollective'
   $stomp_passwd  = 'marionette'
   $stomp_server  = 'stomp'

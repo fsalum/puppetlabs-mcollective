@@ -29,6 +29,13 @@ plugin.activemq.pool.1.host     = <%= stomp_server %>
 plugin.activemq.pool.1.port     = <%= stomp_port %>
 plugin.activemq.pool.1.user     = <%= stomp_user %>
 plugin.activemq.pool.1.password = <%= stomp_passwd %>
+<% elsif connector == 'rabbitmq' %>
+plugin.rabbitmq.vhost           = <%= stomp_vhost %>
+plugin.rabbitmq.pool.size = 1
+plugin.rabbitmq.pool.1.host     = <%= stomp_server %>
+plugin.rabbitmq.pool.1.port     = <%= stomp_port %>
+plugin.rabbitmq.pool.1.user     = <%= stomp_user %>
+plugin.rabbitmq.pool.1.password = <%= stomp_passwd %>
 <% end %>
 
 # NRPE
