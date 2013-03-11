@@ -1,3 +1,5 @@
+2013-03-11 ActionJack - 0.0.4
+* Adding support for rabbitmq
 2013-02-19 Felipe Salum <fsalum@gmail.com> - 0.0.3
 * Adding options for activemq connector
 * Ensuring latest libstomp-ruby version to fix issue http://projects.puppetlabs.com/issues/15119
