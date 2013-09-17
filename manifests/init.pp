@@ -39,6 +39,7 @@
 #                           are recognized
 #  [*yaml_facter_source]  - List of colon separated yaml files used by yaml fact source
 #  [*plugin_params]       - Hash of parameters passed to mcollective plugins
+#  [*direct_addressing]   - Enable Direct Addressing
 #
 # Actions:
 #
@@ -95,6 +96,7 @@ class mcollective(
   $mc_security_psk      = $mcollective::params::mc_security_psk,
   $fact_source          = 'facter',
   $yaml_facter_source   = '/etc/mcollective/facts.yaml',
+  $direct_addressing    = '1',
   $plugin_params        = {}
 ) inherits mcollective::params
 {
