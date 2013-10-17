@@ -1,51 +1,51 @@
 # Basic stuff
-topicprefix     = <%= mc_topicprefix %>
-main_collective = <%= main_collective %>
-collectives     = <%= collectives %>
-libdir          = <%= mc_libdir %>
-logfile         = <%= mc_logfile %>
-loglevel        = <%= mc_loglevel %>
-daemonize       = <%= mc_daemonize %>
-classesfile     = <%= classesfile %>
+topicprefix     = <%= @mc_topicprefix %>
+main_collective = <%= @main_collective %>
+collectives     = <%= @collectives %>
+libdir          = <%= @mc_libdir %>
+logfile         = <%= @mc_logfile %>
+loglevel        = <%= @mc_loglevel %>
+daemonize       = <%= @mc_daemonize %>
+classesfile     = <%= @classesfile %>
 
 # Plugins
-securityprovider = <%= mc_security_provider_real %>
-plugin.psk       = <%= mc_security_psk_real %>
+securityprovider = <%= @mc_security_provider_real %>
+plugin.psk       = <%= @mc_security_psk_real %>
 
 # Registration
 #registerinterval = 300
 #registration     = Meta
 
 # Middleware
-connector             = <%= connector %>
-<% if connector == 'stomp' %>
-plugin.stomp.host     = <%= stomp_server %>
-plugin.stomp.port     = <%= stomp_port %>
-plugin.stomp.user     = <%= stomp_user %>
-plugin.stomp.password = <%= stomp_passwd %>
-<% elsif connector == 'activemq' %>
+connector             = <%= @connector %>
+<% if @connector == 'stomp' %>
+plugin.stomp.host     = <%= @stomp_server %>
+plugin.stomp.port     = <%= @stomp_port %>
+plugin.stomp.user     = <%= @stomp_user %>
+plugin.stomp.password = <%= @stomp_passwd %>
+<% elsif @connector == 'activemq' %>
 plugin.activemq.pool.size = 1
-plugin.activemq.pool.1.host     = <%= stomp_server %>
-plugin.activemq.pool.1.port     = <%= stomp_port %>
-plugin.activemq.pool.1.user     = <%= stomp_user %>
-plugin.activemq.pool.1.password = <%= stomp_passwd %>
-<% elsif connector == 'rabbitmq' %>
-plugin.rabbitmq.vhost           = <%= stomp_vhost %>
+plugin.activemq.pool.1.host     = <%= @stomp_server %>
+plugin.activemq.pool.1.port     = <%= @stomp_port %>
+plugin.activemq.pool.1.user     = <%= @stomp_user %>
+plugin.activemq.pool.1.password = <%= @stomp_passwd %>
+<% elsif @connector == 'rabbitmq' %>
+plugin.rabbitmq.vhost           = <%= @stomp_vhost %>
 plugin.rabbitmq.pool.size = 1
-plugin.rabbitmq.pool.1.host     = <%= stomp_server %>
-plugin.rabbitmq.pool.1.port     = <%= stomp_port %>
-plugin.rabbitmq.pool.1.user     = <%= stomp_user %>
-plugin.rabbitmq.pool.1.password = <%= stomp_passwd %>
+plugin.rabbitmq.pool.1.host     = <%= @stomp_server %>
+plugin.rabbitmq.pool.1.port     = <%= @stomp_port %>
+plugin.rabbitmq.pool.1.user     = <%= @stomp_user %>
+plugin.rabbitmq.pool.1.password = <%= @stomp_passwd %>
 <% end %>
 
 # NRPE
-plugin.nrpe.conf_dir  = <%= nrpe_dir_real %>
+plugin.nrpe.conf_dir  = <%= @nrpe_dir_real %>
 
 # Facts
-factsource = <%= fact_source %>
-<% if fact_source == 'yaml' -%>
-plugin.yaml = <%= yaml_facter_source %>
+factsource = <%= @fact_source %>
+<% if @fact_source == 'yaml' -%>
+plugin.yaml = <%= @yaml_facter_source %>
 <% end -%>
 
 # Direct Addressing
-direct_addressing = <%= direct_addressing %>
+direct_addressing = <%= @direct_addressing %>

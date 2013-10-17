@@ -1,3 +1,5 @@
+2013-10-17 Felipe Salum <fsalum@gmail.com> - 0.0.6
+* Fixing template deprecated variable warnings
 2013-09-17 Felipe Salum <fsalum@gmail.com> - 0.0.5
 * Enable Direct Addressing in the config files
 2013-03-11 ActionJack - 0.0.4
